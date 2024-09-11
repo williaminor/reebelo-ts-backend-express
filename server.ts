@@ -14,10 +14,15 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const mongoURI = process.env.MONGO_URI;
+if (!mongoURI) {
+  throw new Error("MongoDB URI is not defined in .env");
+}
+
 mongoose
-  .connect(process.env.MONGO_URI as string)
+  .connect(mongoURI)
   .then(() => console.log("Connected MongoDB"))
-  .catch((err) => console.error(err));
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
