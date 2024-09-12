@@ -13,6 +13,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
 const mongoURI = process.env.MONGO_URI;
 if (!mongoURI) {
