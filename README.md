@@ -1,7 +1,3 @@
-Here’s a modernized version of your backend **README.md** for the Reebelo Case Study:
-
----
-
 # **Reebelo Case Study Backend** (Node.js/Express with TypeScript)
 
 ## **Overview**
